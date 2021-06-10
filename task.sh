@@ -1,8 +1,11 @@
 #!/bin/bash
 #
-
+index=1
 for TASK in $(rabbitmqctl list_queues -q name messages -p pharmanow_vhost)
 do
-	echo "|$TASK|"
-	echo $TASK | cut -d' ' -f 1
+	if [ $((a%2)) -ne 0 ]
+	then
+		echo $TASK
+	fi
+	
 done
