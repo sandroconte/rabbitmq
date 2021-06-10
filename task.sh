@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-index=1
+i=1
 for TASK in $(rabbitmqctl list_queues -q name messages -p pharmanow_vhost)
 do
-	if [ $((index%2)) -ne 0 ]
+	if [ $((i%2)) -ne 0 ]
 	then
 		echo $TASK
 	fi
-	index++
+	i=$((i+1))
 done
